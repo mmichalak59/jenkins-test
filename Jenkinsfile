@@ -10,7 +10,7 @@ echo "Build: ${env.BUILD_NUMBER}"
 }
 stage('Testy') {
 when {
-not { branch 'master' }
+not { branch 'origin/master' }
 }
 steps {
 sh 'python3 app_test.py'
