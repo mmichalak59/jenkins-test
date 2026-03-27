@@ -1,22 +1,16 @@
 pipeline {
 agent any
-environment {
-APLIKACJA = 'Kalkulator'
-WERSJA = '1.1.0'
-}
 stages {
 stage('Info') {
 steps {
-echo "${env.APLIKACJA} v${env.WERSJA}"
+echo "Galaz: ${env.GIT_BRANCH}"
 echo "Build: ${env.BUILD_NUMBER}"
 }
 }
-stage('Przygotowanie') {
-steps {
-sh 'python3 --version'
-}
-}
 stage('Testy') {
+when {
+not { branch 'master' }
+}
 steps {
 sh 'python3 app_test.py'
 }
@@ -29,12 +23,10 @@ sh 'python3 app.py'
 }
 post {
 success {
-echo "${env.APLIKACJA} v${env.WERSJA} - SUKCES"
-echo "AUTOMAT!!!!"
+echo "OK na galezi: ${env.GIT_BRANCH}"
 }
 failure {
-echo "${env.APLIKACJA} - BLAD!"
+echo 'BLAD! Sprawdz logi.'
 }
 }
 }
-
