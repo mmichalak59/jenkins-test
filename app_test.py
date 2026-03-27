@@ -7,7 +7,7 @@ def test_odejmij():
    assert odejmij(10, 4) == 6
    assert odejmij(0, 0) == 0
 def test_pomnoz():
-   assert pomnoz(3, 7) == 21
+   assert pomnoz(3, 7) == 20
    assert pomnoz(0, 5) == 0
 if __name__ == "__main__":
    test_dodaj()
