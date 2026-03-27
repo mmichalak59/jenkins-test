@@ -11,7 +11,9 @@ echo "Build: ${env.BUILD_NUMBER}"
 }
 stage('Testy') {
 when {
-not { branch 'master' }
+expression {
+            return env.GIT_BRANCH != 'origin/master'
+        }
 }
 steps {
 sh 'python3 app_test.py'
