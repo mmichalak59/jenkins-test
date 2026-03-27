@@ -37,3 +37,4 @@ echo "${env.APLIKACJA} - BLAD!"
 }
 }
 }
+
