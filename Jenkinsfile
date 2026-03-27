@@ -9,7 +9,7 @@ sh 'python3 --version'
 }
 stage('Testy') {
 steps {
-sh 'python3 test_app.py'
+sh 'python3 app_test.py'
 }
 }
 stage('Aplikacja') {
