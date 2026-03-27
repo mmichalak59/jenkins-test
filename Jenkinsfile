@@ -30,6 +30,7 @@ sh 'python3 app.py'
 post {
 success {
 echo "${env.APLIKACJA} v${env.WERSJA} - SUKCES"
+echo "AUTOMAT!!!!"
 }
 failure {
 echo "${env.APLIKACJA} - BLAD!"
